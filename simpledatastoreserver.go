@@ -17,6 +17,7 @@ func main() {
 		w.Header().Add("Access-Control-Allow-Origin", "*")
 		w.Header().Add("Access-Control-Allow-Headers", "*")
 		w.Header().Add("Access-Control-Allow-Methods", "*")
+		w.Header().Add("Access-Control-Expose-Headers", "*")
 
 		if r.Method == http.MethodGet && r.URL.Path == "/datastoreget" {
 			dataStoreMu.Lock()
@@ -35,6 +36,7 @@ func main() {
 		w.Header().Add("Access-Control-Allow-Origin", "*")
 		w.Header().Add("Access-Control-Allow-Headers", "*")
 		w.Header().Add("Access-Control-Allow-Methods", "*")
+		w.Header().Add("Access-Control-Expose-Headers", "*")
 
 		if r.URL.Path == "/datastoreget" {
 			w.WriteHeader(http.StatusOK)
@@ -47,6 +49,7 @@ func main() {
 		w.Header().Add("Access-Control-Allow-Origin", "*")
 		w.Header().Add("Access-Control-Allow-Headers", "*")
 		w.Header().Add("Access-Control-Allow-Methods", "*")
+		w.Header().Add("Access-Control-Expose-Headers", "*")
 
 		if r.URL.Path == "/datastoreset" {
 			c, err1 := strconv.ParseInt(r.Header.Get("sdss-data-store-counter"), 10, 64)
@@ -81,6 +84,7 @@ func main() {
 		w.Header().Add("Access-Control-Allow-Origin", "*")
 		w.Header().Add("Access-Control-Allow-Headers", "*")
 		w.Header().Add("Access-Control-Allow-Methods", "*")
+		w.Header().Add("Access-Control-Expose-Headers", "*")
 
 		if r.URL.Path == "/datastoreset" {
 			w.WriteHeader(http.StatusOK)
