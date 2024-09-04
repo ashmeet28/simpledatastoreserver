@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	var dataStore []byte
+	var dataStore []byte = []byte{0x7b, 0x7d}
 	var dataStoreCounter int
 	var dataStoreMu sync.Mutex
 
